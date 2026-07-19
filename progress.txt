@@ -1,0 +1,3 @@
+# Ralph Loop progress log (append-only — never delete lines)
+# Format: TASK <n> DONE — <one-line summary>
+# The agent appends one line per completed task, then commits.
