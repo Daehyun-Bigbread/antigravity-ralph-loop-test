@@ -89,8 +89,80 @@
       </section>
 
       <!-- Features / bento section -->
-      <section aria-label="Features">
-        <!-- feature cards -->
+      <section id="features" class="features" aria-labelledby="features-heading">
+        <div class="container features__container">
+
+          <!-- Section eyebrow + heading -->
+          <header class="features__header">
+            <p class="features__overline" aria-hidden="true">What we do</p>
+            <h2 id="features-heading" class="features__heading">
+              Craft, elevated<br>by intention.
+            </h2>
+          </header>
+
+          <!-- Bento grid -->
+          <div class="bento" role="list">
+
+            <!-- Card 1 — tall feature card (spans 2 rows) -->
+            <article class="bento__card bento__card--feature" role="listitem">
+              <div class="bento__card-inner">
+                <span class="bento__tag">Strategy</span>
+                <h3 class="bento__card-heading">Brand systems that breathe.</h3>
+                <p class="bento__card-body">
+                  We define visual languages from first principles — not borrowed kits.
+                  Modular, scalable, unmistakably yours.
+                </p>
+                <a href="#" class="bento__card-link" aria-label="Learn more about Brand Strategy">
+                  <span>Explore</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="bento__card-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- Card 2 — medium card -->
+            <article class="bento__card bento__card--medium" role="listitem">
+              <div class="bento__card-inner">
+                <span class="bento__tag">Editorial</span>
+                <h3 class="bento__card-heading">Words with weight.</h3>
+                <p class="bento__card-body">
+                  Copy and content direction that carries the visual argument forward.
+                </p>
+              </div>
+              <div class="bento__card-number" aria-hidden="true">01</div>
+            </article>
+
+            <!-- Card 3 — medium card -->
+            <article class="bento__card bento__card--medium" role="listitem">
+              <div class="bento__card-inner">
+                <span class="bento__tag">Motion</span>
+                <h3 class="bento__card-heading">Animation with purpose.</h3>
+                <p class="bento__card-body">
+                  Every transition earns its place. We animate what matters, silence the rest.
+                </p>
+              </div>
+              <div class="bento__card-number" aria-hidden="true">02</div>
+            </article>
+
+            <!-- Card 4 — wide panoramic card -->
+            <article class="bento__card bento__card--wide" role="listitem">
+              <div class="bento__card-inner">
+                <span class="bento__tag">Digital &amp; Web</span>
+                <h3 class="bento__card-heading">Interfaces that feel inevitable.</h3>
+                <p class="bento__card-body">
+                  Pixel-precise, accessibility-first, performance-obsessed — from prototype to production.
+                </p>
+              </div>
+              <div class="bento__card-stat" aria-hidden="true">
+                <strong>100</strong><span>/ 100</span>
+                <small>Lighthouse</small>
+              </div>
+            </article>
+
+          </div><!-- /.bento -->
+        </div><!-- /.container -->
       </section>
     </main>
 

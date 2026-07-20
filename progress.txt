@@ -7,3 +7,4 @@ TASK 3 DONE — Created styles/global.css with modern reset, box-sizing, base bo
 TASK 4 DONE — Created styles/typography.css loading Fraunces (serif display) and Inter (grotesque sans) via Google Fonts with font-display:swap; wired fluid clamp() type scale to h1–h6 and body elements
 TASK 5 DONE — Built site header with brand mark + 3-link nav; hover/focus states via transform/opacity-safe underline animation and accent focus rings
 TASK 6 DONE — Built hero section with oversized serif h1, vermilion italic em, supporting body copy, primary + ghost CTAs, and asymmetric 3fr/1fr editorial grid with decorative stat aside
+TASK 7 DONE — Built features/bento section with 4 cards in asymmetric rhythm (tall feature card, 2 medium, 1 wide panoramic); hover elevation via transform+shadow only, no layout-prop animation
