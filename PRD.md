@@ -57,7 +57,7 @@ scripts/main.js
 - [x] 3. Create `styles/global.css`: modern reset, `box-sizing`, base `body` using surface/text
       tokens, sensible container max-width, and `prefers-reduced-motion` guard.
       **Done when:** page renders with warm-paper background and ink text.
-- [ ] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the
+- [x] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the
       clamp() type scale to headings/body, real display-vs-body pairing.
       **Done when:** headings use the serif, body uses the sans, sizes are fluid.
 - [ ] 5. Build the `<header>` with `<nav aria-label="Main navigation">`: brand mark + 3 links,

@@ -1,1 +1,180 @@
-/* typography.css — placeholder; populated in Task 4 */
+/* =============================================================
+   TYPOGRAPHY
+   Loads two web font families via @import with font-display:swap,
+   then wires the fluid type scale tokens (from tokens.css) to
+   heading and body elements.
+
+   Families:
+     Display / headings → Fraunces  (optical-size serif, high contrast)
+     Body / UI          → Inter     (geometric grotesque sans)
+   ============================================================= */
+
+/* -----------------------------------------------------------
+   1. WEB FONT IMPORTS
+   Both families fetched from Google Fonts with font-display:swap
+   so text stays readable while fonts load.
+   ----------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..700&display=swap");
+
+/* -----------------------------------------------------------
+   2. FONT FAMILY TOKENS
+   Centralised here; consumed by the rules below.
+   ----------------------------------------------------------- */
+:root {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+}
+
+/* -----------------------------------------------------------
+   3. BASE BODY TYPOGRAPHY
+   Body copy uses the grotesque, base size, relaxed leading.
+   ----------------------------------------------------------- */
+body {
+  font-family:      var(--font-body);
+  font-size:        var(--text-base);
+  line-height:      var(--leading-normal);
+  letter-spacing:   var(--tracking-normal);
+  font-weight:      400;
+  /* Optical kerning and smooth rendering */
+  font-optical-sizing: auto;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -----------------------------------------------------------
+   4. HEADING DEFAULTS
+   All headings use the display serif with tight leading.
+   Individual sizes are mapped to the fluid scale.
+   ----------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family:    var(--font-display);
+  font-weight:    700;
+  line-height:    var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  /* Preserve optical size axis for Fraunces */
+  font-optical-sizing: auto;
+}
+
+/* Hero / dramatic display — largest step */
+h1 {
+  font-size:   var(--text-3xl);
+  font-weight: 800;
+}
+
+/* Section headings */
+h2 {
+  font-size: var(--text-2xl);
+}
+
+/* Sub-section / card headings */
+h3 {
+  font-size: var(--text-xl);
+}
+
+/* Minor headings */
+h4 {
+  font-size: var(--text-lg);
+}
+
+h5 {
+  font-size: var(--text-md);
+}
+
+h6 {
+  font-size:      var(--text-base);
+  font-family:    var(--font-body);  /* drop to sans for smallest level */
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* -----------------------------------------------------------
+   5. BODY COPY HIERARCHY
+   ----------------------------------------------------------- */
+p {
+  font-size:   var(--text-base);
+  line-height: var(--leading-normal);
+  max-width:   var(--container-prose);  /* comfortable measure */
+}
+
+/* Lead paragraph — slightly larger for opening copy */
+p.lead {
+  font-size:   var(--text-md);
+  line-height: var(--leading-relaxed);
+  font-weight: 300;
+  color:       var(--color-muted);
+}
+
+/* -----------------------------------------------------------
+   6. UI / LABEL TYPOGRAPHY
+   ----------------------------------------------------------- */
+/* Overline / category label — all-caps sans */
+.label-overline {
+  font-family:    var(--font-body);
+  font-size:      var(--text-xs);
+  font-weight:    600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color:          var(--color-muted);
+}
+
+/* Caption text */
+small,
+.caption {
+  font-size:   var(--text-xs);
+  line-height: var(--leading-snug);
+  color:       var(--color-muted);
+}
+
+/* -----------------------------------------------------------
+   7. LINKS
+   ----------------------------------------------------------- */
+a {
+  color:           var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset:     2px;
+  transition:
+    color            var(--duration-fast) var(--ease-out-expo),
+    text-decoration  var(--duration-fast) var(--ease-out-expo);
+}
+
+a:hover {
+  color:           var(--color-accent-hover);
+  text-decoration-thickness: 2px;
+}
+
+/* -----------------------------------------------------------
+   8. BLOCKQUOTE / PULL-QUOTE
+   Editorial serif pull-quote style
+   ----------------------------------------------------------- */
+blockquote {
+  font-family:  var(--font-display);
+  font-size:    var(--text-xl);
+  font-weight:  400;
+  font-style:   italic;
+  line-height:  var(--leading-snug);
+  color:        var(--color-text);
+  border-left:  3px solid var(--color-accent);
+  padding-left: var(--space-6);
+  margin:       0;
+}
+
+/* -----------------------------------------------------------
+   9. CODE (monospace fallback — no custom font loaded)
+   ----------------------------------------------------------- */
+code, pre, kbd {
+  font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+  font-size:   0.9em;
+}
+
+/* -----------------------------------------------------------
+   10. STRONG / EM
+   ----------------------------------------------------------- */
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
