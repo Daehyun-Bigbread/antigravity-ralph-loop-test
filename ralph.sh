@@ -11,7 +11,10 @@
 #                         Aborts after RALPH_MAX_STALLS consecutive non-progress iters,
 #                         instead of burning the whole MAX_ITERS budget on a stuck task.
 set -uo pipefail
-cd "$(dirname "$0")"
+# Absolute path to this repo — agy does NOT inherit the shell cwd as its workspace,
+# so we pass it explicitly via --add-dir AND bake it into the prompt.
+REPO="$(cd "$(dirname "$0")" && pwd)"
+cd "$REPO"
 
 MODEL="${RALPH_MODEL:-Claude Sonnet 4.6 (Thinking)}"
 MAX_ITERS="${RALPH_MAX_ITERS:-15}"
@@ -22,9 +25,13 @@ PROGRESS="progress.txt"
 # Count only real checkbox task lines ("- [x] ..."), not literal `[x]` inside prose.
 count_done() { grep -cE '^- \[x\]' "$PRD" 2>/dev/null || true; }
 
-PROMPT='You are running ONE iteration of a Ralph Loop in the current directory.
-Read PRD.md and progress.txt now. Follow the "Agent Operating Rules (Ralph Loop)"
-section of PRD.md EXACTLY:
+# First (double-quoted) chunk injects the absolute path; second (single-quoted) chunk
+# keeps the literal double-quotes in the rules intact.
+PROMPT="The project directory is: $REPO
+All file reads, file writes, and git commits MUST happen inside that exact directory.
+cd into it first, then read ./PRD.md and ./progress.txt there.
+"'You are running ONE iteration of a Ralph Loop.
+Follow the "Agent Operating Rules (Ralph Loop)" section of PRD.md EXACTLY:
 - Do the single lowest-numbered unchecked "[ ]" task only.
 - Verify it against its "Done when" criteria.
 - Mark that task "[x]" in PRD.md.
@@ -42,6 +49,7 @@ for i in $(seq 1 "$MAX_ITERS"); do
 
   agy -p "$PROMPT" \
       --model "$MODEL" \
+      --add-dir "$REPO" \
       --mode accept-edits \
       --dangerously-skip-permissions \
       --print-timeout 15m 2>&1

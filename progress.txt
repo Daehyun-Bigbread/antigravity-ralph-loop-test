@@ -1,3 +1,15 @@
 # Ralph Loop progress log (append-only — never delete lines)
 # Format: TASK <n> DONE — <one-line summary>
 # The agent appends one line per completed task, then commits.
+TASK 1 DONE — Created index.html skeleton with semantic structure, meta viewport, lang attr, CSS links, and deferred JS script; added stub CSS/JS files to eliminate 404 errors
+TASK 2 DONE — Created styles/tokens.css with full oklch palette, fluid clamp() type scale (xs–3xl), spacing scale, layout, shadow, transition, and z-index tokens as :root custom properties
+TASK 3 DONE — Created styles/global.css with modern reset, box-sizing, base body using surface/text tokens, .container max-width, focus-visible ring, and prefers-reduced-motion guard
+TASK 4 DONE — Created styles/typography.css loading Fraunces (serif display) and Inter (grotesque sans) via Google Fonts with font-display:swap; wired fluid clamp() type scale to h1–h6 and body elements
+TASK 5 DONE — Built site header with brand mark + 3-link nav; hover/focus states via transform/opacity-safe underline animation and accent focus rings
+TASK 6 DONE — Built hero section with oversized serif h1, vermilion italic em, supporting body copy, primary + ghost CTAs, and asymmetric 3fr/1fr editorial grid with decorative stat aside
+TASK 7 DONE — Built features/bento section with 4 cards in asymmetric rhythm (tall feature card, 2 medium, 1 wide panoramic); hover elevation via transform+shadow only, no layout-prop animation
+TASK 8 DONE — Built site footer with brand mark, social icon links, three nav columns (Work/Services/Contact), address, and a fine copyright bar; all styled with design tokens and --color-line borders
+TASK 9 DONE — Responsive pass: hamburger nav for <640px, tiny-screen overrides at 320/374px, fluid card heights at 640/768/1024/1440px, overflow safety net; no horizontal scroll at any target width
+TASK 10 DONE — Added IntersectionObserver entrance reveal in main.js (opacity/translateY fade-rise on scroll) with data-reveal attributes on hero, features header, bento cards (staggered), and footer; reduced-motion skips observer and reveals instantly
+TASK 11 DONE — Accessibility polish: added skip-to-content link, fixed mobile nav visibility:hidden so closed nav links are removed from tab order, added missing --ease-out token, verified AA contrast and heading order; keyboard nav works end to end
+ALL TASKS COMPLETE

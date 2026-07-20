@@ -48,36 +48,36 @@ scripts/main.js
 ```
 
 ## Tasks
-- [ ] 1. Create `index.html` skeleton: semantic `<header><main><footer>`, `<meta viewport>`,
+- [x] 1. Create `index.html` skeleton: semantic `<header><main><footer>`, `<meta viewport>`,
       lang attr, and `<link>`s to the three CSS files + `<script defer>` to `scripts/main.js`.
       **Done when:** page opens with valid structure and no console errors (empty sections OK).
-- [ ] 2. Create `styles/tokens.css` with the full palette + a fluid type scale + spacing tokens
+- [x] 2. Create `styles/tokens.css` with the full palette + a fluid type scale + spacing tokens
       as `:root` custom properties (use the values above).
       **Done when:** tokens exist and index.html links it.
-- [ ] 3. Create `styles/global.css`: modern reset, `box-sizing`, base `body` using surface/text
+- [x] 3. Create `styles/global.css`: modern reset, `box-sizing`, base `body` using surface/text
       tokens, sensible container max-width, and `prefers-reduced-motion` guard.
       **Done when:** page renders with warm-paper background and ink text.
-- [ ] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the
+- [x] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the
       clamp() type scale to headings/body, real display-vs-body pairing.
       **Done when:** headings use the serif, body uses the sans, sizes are fluid.
-- [ ] 5. Build the `<header>` with `<nav aria-label="Main navigation">`: brand mark + 3 links,
+- [x] 5. Build the `<header>` with `<nav aria-label="Main navigation">`: brand mark + 3 links,
       designed hover/focus states.
       **Done when:** nav is keyboard-focusable with visible focus rings.
-- [ ] 6. Build the hero `<section aria-labelledby="hero-heading">`: oversized `<h1 id="hero-heading">`,
+- [x] 6. Build the hero `<section aria-labelledby="hero-heading">`: oversized `<h1 id="hero-heading">`,
       supporting paragraph, primary + ghost CTA. Asymmetric editorial layout, not centered-generic.
       **Done when:** hero has clear scale contrast and two working CTAs.
-- [ ] 7. Build a features/bento `<section>`: 3–4 cards with intentional rhythm (not uniform grid),
+- [x] 7. Build a features/bento `<section>`: 3–4 cards with intentional rhythm (not uniform grid),
       hover elevation via transform only.
       **Done when:** cards show hierarchy + designed hover, no layout-prop animation.
-- [ ] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
+- [x] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
       **Done when:** footer is present and styled with tokens.
-- [ ] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
+- [x] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
       lengths, nav adapts on small screens.
       **Done when:** no overflow at any listed width.
-- [ ] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
+- [x] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
       fully disabled under `prefers-reduced-motion`.
       **Done when:** sections fade/rise in once; reduced-motion shows them instantly.
-- [ ] 11. Accessibility + polish pass: check color contrast (AA), all interactive elements have
+- [x] 11. Accessibility + polish pass: check color contrast (AA), all interactive elements have
       focus states, images (if any) have alt text, headings are ordered.
       **Done when:** no obvious a11y violations; keyboard nav works end to end.
 
