@@ -3,3 +3,4 @@
 # The agent appends one line per completed task, then commits.
 TASK 1 DONE — Created index.html skeleton with semantic structure, meta viewport, lang attr, CSS links, and deferred JS script; added stub CSS/JS files to eliminate 404 errors
 TASK 2 DONE — Created styles/tokens.css with full oklch palette, fluid clamp() type scale (xs–3xl), spacing scale, layout, shadow, transition, and z-index tokens as :root custom properties
+TASK 3 DONE — Created styles/global.css with modern reset, box-sizing, base body using surface/text tokens, .container max-width, focus-visible ring, and prefers-reduced-motion guard

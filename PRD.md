@@ -54,7 +54,7 @@ scripts/main.js
 - [x] 2. Create `styles/tokens.css` with the full palette + a fluid type scale + spacing tokens
       as `:root` custom properties (use the values above).
       **Done when:** tokens exist and index.html links it.
-- [ ] 3. Create `styles/global.css`: modern reset, `box-sizing`, base `body` using surface/text
+- [x] 3. Create `styles/global.css`: modern reset, `box-sizing`, base `body` using surface/text
       tokens, sensible container max-width, and `prefers-reduced-motion` guard.
       **Done when:** page renders with warm-paper background and ink text.
 - [ ] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the

@@ -1,1 +1,200 @@
-/* global.css — placeholder; populated in Task 3 */
+/* =============================================================
+   GLOBAL CSS
+   Modern reset + base layer.
+   All values reference design tokens from tokens.css.
+   ============================================================= */
+
+
+/* -----------------------------------------------------------
+   1. BOX-SIZING RESET
+   ----------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* -----------------------------------------------------------
+   2. MODERN RESET
+   Based on Josh Comeau's reset + Andy Bell's reset patterns.
+   ----------------------------------------------------------- */
+
+/* Remove default margin/padding on common elements */
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styling on ul/ol with a class (intentional lists keep bullets) */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Prevent text overflow in all elements */
+* {
+  min-width: 0;
+}
+
+/* Smooth scrolling — honoured only when motion is acceptable */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Balanced text wrapping for headings */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Readable line lengths for body copy */
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+}
+
+/* Remove built-in form styles in Safari */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflow in images; make them responsive by default */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Ensure anchor colours inherit unless overridden */
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+
+/* -----------------------------------------------------------
+   3. BASE  —  html & body
+   ----------------------------------------------------------- */
+html {
+  /* Establishes the design token baseline */
+  font-size: 100%; /* = 16 px in most browsers */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 2;
+}
+
+body {
+  background-color: var(--color-surface);
+  color:            var(--color-text);
+
+  font-size:   var(--text-base);
+  line-height: var(--leading-normal);
+
+  /* Anti-aliasing for the warm-paper theme */
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent horizontal scroll caused by overflowing children */
+  overflow-x: hidden;
+
+  /* Ensure footer sticks to bottom on short pages */
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+
+/* -----------------------------------------------------------
+   4. CONTAINER
+   Centred, max-width wrapper with responsive gutter.
+   Usage: <div class="container"> … </div>
+   ----------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+
+/* Narrower prose container for long-form copy */
+.container--prose {
+  max-width: var(--container-prose);
+}
+
+
+/* -----------------------------------------------------------
+   5. SELECTION
+   Accent-tinted text selection.
+   ----------------------------------------------------------- */
+::selection {
+  background-color: oklch(62% 0.19 25 / 0.18);
+  color: var(--color-text);
+}
+
+
+/* -----------------------------------------------------------
+   6. FOCUS VISIBLE
+   Consistent keyboard-focus ring using the accent.
+   ----------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove mouse-focus ring (keep keyboard only) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* -----------------------------------------------------------
+   7. HORIZONTAL RULE
+   Themed separator using --color-line token.
+   ----------------------------------------------------------- */
+hr {
+  border: none;
+  border-top: var(--border-width) solid var(--color-line);
+  margin-block: var(--space-8);
+}
+
+
+/* -----------------------------------------------------------
+   8. PREFERS-REDUCED-MOTION GUARD
+   All transition/animation is disabled for users who opt out.
+   Component-level animations must honour this.
+   ----------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
