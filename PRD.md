@@ -60,7 +60,7 @@ scripts/main.js
 - [x] 4. Create `styles/typography.css`: load two web fonts with `font-display: swap`, wire the
       clamp() type scale to headings/body, real display-vs-body pairing.
       **Done when:** headings use the serif, body uses the sans, sizes are fluid.
-- [ ] 5. Build the `<header>` with `<nav aria-label="Main navigation">`: brand mark + 3 links,
+- [x] 5. Build the `<header>` with `<nav aria-label="Main navigation">`: brand mark + 3 links,
       designed hover/focus states.
       **Done when:** nav is keyboard-focusable with visible focus rings.
 - [ ] 6. Build the hero `<section aria-labelledby="hero-heading">`: oversized `<h1 id="hero-heading">`,

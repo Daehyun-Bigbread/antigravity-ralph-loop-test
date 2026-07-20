@@ -198,3 +198,141 @@ hr {
     scroll-behavior: auto;
   }
 }
+
+
+/* -----------------------------------------------------------
+   9. SITE HEADER
+   Full-bleed bar, content constrained by .container.
+   ----------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-line);
+
+  /* Subtle backdrop blur for depth without full opacity */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* Add shadow when page has scrolled (toggled by JS) */
+.site-header.is-scrolled {
+  box-shadow: 0 2px 16px oklch(22% 0.02 60 / 0.08);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  height: 4rem; /* 64 px */
+}
+
+
+/* -----------------------------------------------------------
+   9a. BRAND MARK
+   ----------------------------------------------------------- */
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header__brand-word {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+
+  /* Accent underline grows from left on hover */
+  background-image: linear-gradient(
+    var(--color-accent),
+    var(--color-accent)
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  transition: background-size var(--duration-base) var(--ease-out),
+              color           var(--duration-base) var(--ease-out);
+}
+
+.site-header__brand:hover  .site-header__brand-word,
+.site-header__brand:focus-visible .site-header__brand-word {
+  background-size: 100% 2px;
+  color: var(--color-accent);
+}
+
+/* Custom focus ring on the brand anchor */
+.site-header__brand:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+
+/* -----------------------------------------------------------
+   9b. NAV LIST
+   ----------------------------------------------------------- */
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-muted);
+  padding-block: var(--space-1);
+
+  /* Animated underline using pseudo-element */
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -2px;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--color-text);
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Keyboard focus ring for nav links */
+.nav__link:focus-visible {
+  color: var(--color-text);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.nav__link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+

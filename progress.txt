@@ -5,3 +5,4 @@ TASK 1 DONE — Created index.html skeleton with semantic structure, meta viewpo
 TASK 2 DONE — Created styles/tokens.css with full oklch palette, fluid clamp() type scale (xs–3xl), spacing scale, layout, shadow, transition, and z-index tokens as :root custom properties
 TASK 3 DONE — Created styles/global.css with modern reset, box-sizing, base body using surface/text tokens, .container max-width, focus-visible ring, and prefers-reduced-motion guard
 TASK 4 DONE — Created styles/typography.css loading Fraunces (serif display) and Inter (grotesque sans) via Google Fonts with font-display:swap; wired fluid clamp() type scale to h1–h6 and body elements
+TASK 5 DONE — Built site header with brand mark + 3-link nav; hover/focus states via transform/opacity-safe underline animation and accent focus rings
