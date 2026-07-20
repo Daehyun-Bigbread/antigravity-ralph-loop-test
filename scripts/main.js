@@ -1,6 +1,6 @@
 /* main.js
    Task 9 additions: hamburger nav toggle + header scroll shadow.
-   Task 10 will add the IntersectionObserver entrance reveal.
+   Task 10 additions: IntersectionObserver entrance reveal.
    ----------------------------------------------------------------- */
 
 'use strict';
@@ -93,6 +93,49 @@
 
 
 /* ------------------------------------------------------------------
-   Task 10 placeholder: IntersectionObserver entrance reveal
-   will be implemented in the next iteration.
+   4. ENTRANCE REVEAL  (Task 10)
+   Observes every [data-reveal] element and adds .is-visible when
+   it crosses into the viewport.  Under prefers-reduced-motion the
+   elements are shown immediately — no JS animation fires.
    ------------------------------------------------------------------ */
+(function initReveal() {
+  const prefersReduced = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  // Select all elements tagged for reveal
+  const targets = document.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+
+  // If motion is unwanted, skip the observer entirely — just reveal all
+  if (prefersReduced) {
+    targets.forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  // Build a single shared observer — efficient for many targets
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add('is-visible');
+
+        // Reveal once only — disconnect from this element after firing
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      // Fire when 12 % of the element is in view — feels natural
+      threshold: 0.12,
+      // Slightly negative rootMargin so element is well into viewport before firing
+      rootMargin: '0px 0px -3% 0px',
+    }
+  );
+
+  targets.forEach(function (el) {
+    observer.observe(el);
+  });
+}());
