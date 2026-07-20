@@ -77,7 +77,7 @@ scripts/main.js
 - [x] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
       fully disabled under `prefers-reduced-motion`.
       **Done when:** sections fade/rise in once; reduced-motion shows them instantly.
-- [ ] 11. Accessibility + polish pass: check color contrast (AA), all interactive elements have
+- [x] 11. Accessibility + polish pass: check color contrast (AA), all interactive elements have
       focus states, images (if any) have alt text, headings are ordered.
       **Done when:** no obvious a11y violations; keyboard nav works end to end.
 

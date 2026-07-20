@@ -114,6 +114,7 @@
   /* -----------------------------------------------------------
      TRANSITIONS
      ----------------------------------------------------------- */
+  --ease-out:      cubic-bezier(0.25, 0, 0.3, 1);   /* standard decelerate */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out:   cubic-bezier(0.45, 0, 0.55, 1);
   --duration-fast:   150ms;
