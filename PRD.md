@@ -69,7 +69,7 @@ scripts/main.js
 - [x] 7. Build a features/bento `<section>`: 3–4 cards with intentional rhythm (not uniform grid),
       hover elevation via transform only.
       **Done when:** cards show hierarchy + designed hover, no layout-prop animation.
-- [ ] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
+- [x] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
       **Done when:** footer is present and styled with tokens.
 - [ ] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
       lengths, nav adapts on small screens.
