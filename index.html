@@ -29,7 +29,19 @@
         </a>
 
         <!-- Primary navigation -->
-        <nav aria-label="Main navigation">
+        <button
+          id="nav-toggle"
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <nav id="main-nav" aria-label="Main navigation">
           <ul class="nav__list" role="list">
             <li><a href="#work"      class="nav__link">Work</a></li>
             <li><a href="#features"  class="nav__link">Features</a></li>
