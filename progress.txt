@@ -6,3 +6,4 @@ TASK 2 DONE — Created styles/tokens.css with full oklch palette, fluid type sc
 TASK 3 DONE — Created styles/global.css with modern reset, box-sizing, base body using surface/text tokens, container max-width, and prefers-reduced-motion guard
 TASK 4 DONE — Created styles/typography.css with font-display: swap for Fraunces and Inter fonts, and wired clamp() type scale to headings and body
 TASK 5 DONE — Built semantic header with main navigation, brand mark, 3 links, and designed hover/focus states with visible focus rings
+TASK 6 DONE — Built hero section with oversized heading, supporting paragraph, primary and ghost CTAs in an asymmetric editorial layout
