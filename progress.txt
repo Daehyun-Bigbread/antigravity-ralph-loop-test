@@ -2,3 +2,4 @@
 # Format: TASK <n> DONE — <one-line summary>
 # The agent appends one line per completed task, then commits.
 TASK 1 DONE — Created index.html skeleton with semantic structure and linked CSS/JS files
+TASK 2 DONE — Created styles/tokens.css with full oklch palette, fluid type scale, and spacing tokens
