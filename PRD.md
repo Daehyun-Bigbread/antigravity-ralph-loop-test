@@ -74,7 +74,7 @@ scripts/main.js
 - [x] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
       lengths, nav adapts on small screens.
       **Done when:** no overflow at any listed width.
-- [ ] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
+- [x] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
       fully disabled under `prefers-reduced-motion`.
       **Done when:** sections fade/rise in once; reduced-motion shows them instantly.
 - [ ] 11. Accessibility + polish pass: check color contrast (AA), all interactive elements have
