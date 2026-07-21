@@ -10,6 +10,7 @@
   <script defer src="scripts/main.js"></script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header container">
     <nav aria-label="Main navigation" class="site-nav">
       <a href="/" class="brand-mark">
@@ -23,7 +24,7 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="main-content" tabindex="-1">
     <section aria-labelledby="hero-heading" class="hero-section container">
       <div class="hero-meta">
         <span class="meta-label">01 // Architecture & Design</span>
@@ -115,7 +116,7 @@
       </div>
     </section>
   </main>
-  <footer id="contact" class="site-footer container">
+  <footer id="contact" aria-labelledby="contact-heading" class="site-footer container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <a href="/" class="brand-mark">
@@ -124,30 +125,30 @@
         </a>
         <p class="footer-tagline">Crafting digital permanence with Swiss editorial precision.</p>
         <div class="footer-contact">
-          <span class="contact-label">Inquiry &amp; Direct Contact</span>
+          <h2 id="contact-heading" class="contact-label">Inquiry &amp; Direct Contact</h2>
           <a href="mailto:inquiry@atelier-no01.studio" class="contact-email">inquiry@atelier-no01.studio</a>
         </div>
       </div>
       <div class="footer-col footer-links-group">
         <div class="links-column">
-          <span class="links-title">Index</span>
-          <ul class="footer-links" role="list">
+          <h3 class="links-title">Index</h3>
+          <ul class="footer-links" role="list" aria-label="Index navigation">
             <li><a href="#hero-heading" class="footer-link">Manifesto</a></li>
             <li><a href="#features" class="footer-link">System</a></li>
             <li><a href="#contact" class="footer-link">Inquiry</a></li>
           </ul>
         </div>
         <div class="links-column">
-          <span class="links-title">Network</span>
-          <ul class="footer-links" role="list">
-            <li><a href="#" class="footer-link">GitHub</a></li>
-            <li><a href="#" class="footer-link">Are.na</a></li>
-            <li><a href="#" class="footer-link">Read.cv</a></li>
+          <h3 class="links-title">Network</h3>
+          <ul class="footer-links" role="list" aria-label="Network links">
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+            <li><a href="https://are.na" target="_blank" rel="noopener noreferrer" class="footer-link">Are.na</a></li>
+            <li><a href="https://read.cv" target="_blank" rel="noopener noreferrer" class="footer-link">Read.cv</a></li>
           </ul>
         </div>
         <div class="links-column">
-          <span class="links-title">Legal &amp; Specs</span>
-          <ul class="footer-links" role="list">
+          <h3 class="links-title">Legal &amp; Specs</h3>
+          <ul class="footer-links" role="list" aria-label="Legal and specifications">
             <li><span class="footer-text">Built dependency-free</span></li>
             <li><span class="footer-text">&copy; 2026 Atelier N&deg; 01</span></li>
           </ul>

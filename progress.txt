@@ -11,3 +11,5 @@ TASK 7 DONE — Built features/bento section with 4 hierarchical cards in an int
 TASK 8 DONE — Built footer with contact section, navigation/network links, and fine top border using --color-line and design tokens
 TASK 9 DONE — Completed responsive pass across 320/375/768/1024/1440 widths ensuring zero horizontal overflow, readable line lengths, and adaptive navigation
 TASK 10 DONE — Implemented tasteful entrance reveal via IntersectionObserver in scripts/main.js with prefers-reduced-motion guard
+TASK 11 DONE — Completed accessibility and polish pass verifying WCAG AA color contrast, end-to-end keyboard focusability with skip-link, ordered headings, and instant focus-within reveal
+ALL TASKS COMPLETE

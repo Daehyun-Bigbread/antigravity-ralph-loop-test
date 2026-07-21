@@ -78,6 +78,54 @@ a {
   text-decoration: none;
 }
 
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Accessibility Skip Link */
+.skip-link {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 2px;
+  transform: translateY(-150%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Universal Accessible Focus Indicator */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 /* Header & Navigation Styles */
 .site-header {
   padding-top: var(--space-8);
@@ -432,7 +480,7 @@ a {
 
 .card-number {
   font-family: var(--font-sans);
-  color: var(--color-accent);
+  color: var(--color-accent-text, var(--color-accent));
   font-weight: 600;
 }
 
@@ -702,7 +750,8 @@ a {
   will-change: opacity, transform;
 }
 
-.reveal-target.is-revealed {
+.reveal-target.is-revealed,
+.reveal-target:focus-within {
   opacity: 1;
   transform: translateY(0);
 }

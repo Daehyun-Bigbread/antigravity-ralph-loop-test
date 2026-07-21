@@ -47,5 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
   revealTargets.forEach(target => {
     target.classList.add('reveal-target');
     revealObserver.observe(target);
+
+    // Ensure keyboard navigation immediately reveals hidden target sections when focused
+    target.addEventListener('focusin', () => {
+      if (!target.classList.contains('is-revealed')) {
+        target.classList.add('is-revealed');
+        revealObserver.unobserve(target);
+      }
+    });
   });
 });

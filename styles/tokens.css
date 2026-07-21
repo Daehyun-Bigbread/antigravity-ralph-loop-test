@@ -6,6 +6,7 @@
   --color-text: oklch(22% 0.02 60);
   --color-muted: oklch(52% 0.02 60);
   --color-accent: oklch(62% 0.19 25);
+  --color-accent-text: oklch(56% 0.19 25);
   --color-line: oklch(88% 0.01 90);
 
   /* Typography Families */
