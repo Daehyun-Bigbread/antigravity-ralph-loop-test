@@ -71,7 +71,7 @@ scripts/main.js
       **Done when:** cards show hierarchy + designed hover, no layout-prop animation.
 - [x] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
       **Done when:** footer is present and styled with tokens.
-- [ ] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
+- [x] 9. Responsive pass at 320 / 375 / 768 / 1024 / 1440: no horizontal overflow, readable line
       lengths, nav adapts on small screens.
       **Done when:** no overflow at any listed width.
 - [ ] 10. `scripts/main.js`: one tasteful entrance reveal (opacity/transform) via IntersectionObserver,
