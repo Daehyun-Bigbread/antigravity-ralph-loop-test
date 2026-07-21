@@ -66,7 +66,7 @@ scripts/main.js
 - [x] 6. Build the hero `<section aria-labelledby="hero-heading">`: oversized `<h1 id="hero-heading">`,
       supporting paragraph, primary + ghost CTA. Asymmetric editorial layout, not centered-generic.
       **Done when:** hero has clear scale contrast and two working CTAs.
-- [ ] 7. Build a features/bento `<section>`: 3–4 cards with intentional rhythm (not uniform grid),
+- [x] 7. Build a features/bento `<section>`: 3–4 cards with intentional rhythm (not uniform grid),
       hover elevation via transform only.
       **Done when:** cards show hierarchy + designed hover, no layout-prop animation.
 - [ ] 8. Build the `<footer>`: contact/links, fine top border using `--color-line`.
