@@ -48,7 +48,7 @@ scripts/main.js
 ```
 
 ## Tasks
-- [ ] 1. Create `index.html` skeleton: semantic `<header><main><footer>`, `<meta viewport>`,
+- [x] 1. Create `index.html` skeleton: semantic `<header><main><footer>`, `<meta viewport>`,
       lang attr, and `<link>`s to the three CSS files + `<script defer>` to `scripts/main.js`.
       **Done when:** page opens with valid structure and no console errors (empty sections OK).
 - [ ] 2. Create `styles/tokens.css` with the full palette + a fluid type scale + spacing tokens
