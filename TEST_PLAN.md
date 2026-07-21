@@ -8,9 +8,9 @@
 
 | # | 모델 | agy `--model` 값 | 우선순위 |
 |---|------|-------------------|----------|
-| 1 | Claude Sonnet 4.6 (Thinking) | `Claude Sonnet 4.6 (Thinking)` | **완료** (baseline) |
-| 2 | Gemini 3.5 Flash (High) | `Gemini 3.5 Flash (High)` | 다음 |
-| 3 | Gemini 3.1 Pro (High) | `Gemini 3.1 Pro (High)` | 이후 |
+| 1 | Claude Sonnet 4.6 (Thinking) | `Claude Sonnet 4.6 (Thinking)` | 완료 (`run/claude-sonnet-4.6` 브랜치에 보존) |
+| 2 | Gemini 3.1 Pro (High) | `Gemini 3.1 Pro (High)` | **다음** (ralph.sh 기본값 / `run/gemini-3.1-pro`) |
+| 3 | Gemini 3.5 Flash (High) | `Gemini 3.5 Flash (High)` | 이후 |
 
 필요 시 추가 가능: `Gemini 3.5 Flash (Low)`, `Gemini 3.1 Pro (Low)`, `GPT-OSS 120B (Medium)`
 
@@ -54,9 +54,9 @@ RALPH_MODEL="Gemini 3.1 Pro (High)" bash ralph.sh
 
 ```
 main (또는 기본 브랜치)
-├── run/claude-sonnet-4.6   ← baseline (현재 실행 완료)
-├── run/gemini-3.5-flash    ← 예정
-└── run/gemini-3.1-pro      ← 예정
+├── run/claude-sonnet-4.6   ← 실행 완료 (보존됨)
+├── run/gemini-3.1-pro      ← 다음 실행 (기본 모델)
+└── run/gemini-3.5-flash    ← 예정
 ```
 
 ## 평가 기준

@@ -71,12 +71,16 @@ bash ralph.sh
 
 | 변수 | 기본값 | 설명 |
 |------|--------|------|
-| `RALPH_MODEL` | `Claude Sonnet 4.6 (Thinking)` | 사용할 모델 |
+| `RALPH_MODEL` | `Gemini 3.1 Pro (High)` | 사용할 모델 |
 | `RALPH_MAX_ITERS` | `15` | 최대 반복 횟수 (안전 상한) |
 | `RALPH_MAX_STALLS` | `2` | 연속 무진전/에러 몇 번이면 중단할지 |
 
 ```bash
-RALPH_MODEL="Gemini 3.1 Pro (High)" RALPH_MAX_ITERS=20 bash ralph.sh
+# 기본값이 Gemini 3.1 Pro (High) 이므로 그냥 실행하면 Gemini 로 돕니다.
+bash ralph.sh
+
+# 다른 모델로 바꾸려면 RALPH_MODEL 로 override:
+RALPH_MODEL="Claude Sonnet 4.6 (Thinking)" RALPH_MAX_ITERS=20 bash ralph.sh
 ```
 
 > 이 PRD는 "generic 템플릿 금지 / editorial-Swiss / oklch 토큰 / 접근성" 같은

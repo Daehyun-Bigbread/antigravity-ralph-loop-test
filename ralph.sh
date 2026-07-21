@@ -16,7 +16,7 @@ set -uo pipefail
 REPO="$(cd "$(dirname "$0")" && pwd)"
 cd "$REPO"
 
-MODEL="${RALPH_MODEL:-Claude Sonnet 4.6 (Thinking)}"
+MODEL="${RALPH_MODEL:-Gemini 3.1 Pro (High)}"
 MAX_ITERS="${RALPH_MAX_ITERS:-15}"
 MAX_STALLS="${RALPH_MAX_STALLS:-2}"   # consecutive no-progress/error iters before abort
 PRD="PRD.md"
