@@ -38,13 +38,14 @@ LLM의 두 가지 근본 문제를 파일 기반으로 해결하는 자율 코�
 | `PRD.md` | **단일 진실 공급원(Source of Truth).** 11개 태스크 + 에이전트 운영 규칙 + 디자인 방향. 에이전트가 매 반복 이 파일을 다시 읽습니다. |
 | `progress.txt` | append-only 진행 로그. 완료 태스크마다 한 줄씩 추가되고, 전부 끝나면 `ALL TASKS COMPLETE`가 기록됩니다. |
 | `ralph.sh` | 루프 러너. `agy -p`를 매 반복 새 세션으로 호출하며, **실패 감지 + 정체(stall) 감지**로 안전하게 멈춥니다. |
+| `TEST_PLAN.md` | 동일 PRD를 여러 모델(Claude Sonnet 4.6, Gemini 3.1 Pro, Gemini 3.5 Flash 등)로 돌려 비교하기 위한 브랜치 전략과 평가 기준 문서. |
 
 ---
 
 ## 요구 사항
 
 - macOS + [Antigravity](https://antigravity.google) 설치 (헤드리스 CLI `agy` 포함)
-- `agy`가 PATH에 있어야 함 (기본 위치: `~/.local/bin/agy`)
+- `agy`가 PATH에 있어야 함 (설치 경로는 배포 방식에 따라 다를 수 있음, 예: `~/.local/bin/agy`)
 - git 레포 (커밋이 발생하므로)
 
 `agy` 동작 확인:
@@ -58,12 +59,14 @@ agy -p "reply OK"   # 헤드리스 단발 실행 테스트
 ## 실행 방법
 
 ```bash
-cd ~/Documents/github/antigravity-ralph-loop-test
+cd ~/Documents/GitHub/antigravity-ralph-loop-test
 bash ralph.sh
 ```
 
-루프가 태스크 1번부터 하나씩 완료 → `[x]` 체크 → `progress.txt` append → 커밋 →
-`ALL TASKS COMPLETE`가 나오면 자동 종료합니다.
+루프가 가장 번호가 낮은 미완료 태스크부터 하나씩 완료 → `[x]` 체크 → `progress.txt` append → 커밋 →
+`ALL TASKS COMPLETE`가 나오면 자동 종료(exit 0)합니다.
+연속 정체/에러가 `RALPH_MAX_STALLS`회에 도달하거나 `RALPH_MAX_ITERS`를 다 쓰면
+비정상 종료(exit 1)하며, 이 경우 재실행하면 이어서 진행합니다.
 
 **중간에 멈추기:** `Ctrl+C`
 
@@ -96,8 +99,9 @@ RALPH_MODEL="Claude Sonnet 4.6 (Thinking)" RALPH_MAX_ITERS=20 bash ralph.sh
 
 - **실패 감지** — `agy`의 종료 코드를 확인합니다. 크래시/타임아웃/레이트리밋이면
   그 반복을 "무진전"으로 분류합니다 (조용히 성공으로 넘기지 않음).
-- **정체(stall) 감지** — 반복 전후로 완료된 태스크 수(`PRD.md`의 `[x]` 개수)와 git HEAD를
-  스냅샷 비교합니다. 태스크가 실제로 하나도 완료되지 않았으면 정체로 봅니다.
+- **정체(stall) 감지** — 반복 전후로 완료된 태스크 수(`PRD.md`의 `[x]` 개수)를 비교해
+  실제로 하나도 완료되지 않았으면 정체로 판정합니다. git HEAD 스냅샷은 별도로 비교해
+  "태스크는 늘었는데 새 커밋이 없는" 커밋 위생 문제를 로그로 알려줍니다.
 - **연속 정체 시 중단** — 무진전/에러가 `RALPH_MAX_STALLS`번 연속되면 즉시 중단합니다.
   같은 태스크에 막혀 `MAX_ITERS`를 전부 태우는 상황을 방지합니다.
 - **실패 시 백오프** — 정체/에러 뒤에는 대기 시간을 늘려 레이트리밋 회복을 돕습니다.
@@ -109,7 +113,8 @@ RALPH_MODEL="Claude Sonnet 4.6 (Thinking)" RALPH_MAX_ITERS=20 bash ralph.sh
 `ralph.sh`는 `--dangerously-skip-permissions`를 사용합니다 (자율 실행이라 매번
 권한을 물으면 루프가 멈추기 때문). **이 테스트 레포에서는 괜찮지만**, 실제 프로젝트에
 쓸 때는 이 플래그의 위험(임의 도구 실행 무제한 승인)을 반드시 고려하세요.
-가능하면 `--sandbox` + 별도 git worktree(문제 시 `git reset --hard`로 복구)에서 돌리는 것을 권장합니다.
+가능하면 별도 git worktree나 격리된 디렉터리에서 돌리고, 문제 발생 시 `git reset --hard`로
+복구하는 것을 권장합니다. (`agy`에 별도의 샌드박스 실행 옵션이 있는지는 `agy --help`로 직접 확인하세요.)
 
 ---
 
