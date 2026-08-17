@@ -3,6 +3,8 @@
 Google **Antigravity**의 헤드리스 CLI(`agy`)로 **Ralph Loop**를 돌려보는 테스트 레포입니다.
 목표 산출물은 `PRD.md`에 정의된 **의존성 없는 정적 랜딩 페이지**(순수 HTML/CSS/JS, 빌드 스텝 없음).
 
+📊 **관련 발표자료:** [IOEX26 — Antigravity 101 (참가자 공유용)](https://docs.google.com/presentation/d/1mfLX8bbLfpB4Kuxcj_AtX2NJdvhhOQIxpu8A4rv_A6U/edit?usp=sharing)
+
 ---
 
 ## Ralph Loop이 뭔가요?
